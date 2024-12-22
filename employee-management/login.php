@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['user_id'])) {
-    header("Location: views/dashboard.php");
+    header("Location: views/index.php");
     exit;
 }
 
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($user) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['role'] = $user['role'];
-        header("Location: views/dashboard.php");
+        header("Location: views/index.php");
     } else {
         $error = "Tên đăng nhập hoặc mật khẩu không đúng!";
     }
